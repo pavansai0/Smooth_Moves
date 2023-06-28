@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:smooth_moves/screens/buyer_login.dart';
 import 'package:smooth_moves/screens/seller_login.dart';
 import 'firebase_options.dart';
 
@@ -63,7 +64,7 @@ class MyApp extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => SellerLoginScreen(),
+                          builder: (context) => const BuyerLoginScreen(),
                         ),
                       );
                     },

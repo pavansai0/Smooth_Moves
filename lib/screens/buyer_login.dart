@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:smooth_moves/screens/buyer_home.dart';
 
 class BuyerLoginScreen extends StatefulWidget {
-  const BuyerLoginScreen({super.key});
+  const BuyerLoginScreen({Key? key}) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
@@ -29,7 +30,14 @@ class _BuyerLoginScreenState extends State<BuyerLoginScreen> {
         password: _passwordController.text,
       );
 
-      // Perform any necessary actions after successful login
+      // Navigate to BuyersHomeScreen after successful login
+      // ignore: use_build_context_synchronously
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => const BuyersHomeScreen(),
+        ),
+      );
     } catch (error) {
       setState(() {
         _errorMessage = 'Login failed. Please check your credentials.';
@@ -54,7 +62,14 @@ class _BuyerLoginScreenState extends State<BuyerLoginScreen> {
       };
       await _database.child(uid).set(userData);
 
-      // Perform any necessary actions after successful signup
+      // Navigate to BuyersHomeScreen after successful signup
+      // ignore: use_build_context_synchronously
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => const BuyersHomeScreen(),
+        ),
+      );
     } catch (error) {
       setState(() {
         _errorMessage = 'Signup failed. Please try again later.';
@@ -67,39 +82,39 @@ class _BuyerLoginScreenState extends State<BuyerLoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Buyer Login'),
+        title: const Text('Buyer Login'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             TextField(
               controller: _emailController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Email',
               ),
             ),
             TextField(
               controller: _passwordController,
               obscureText: true,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Password',
               ),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _login,
-              child: Text('Login'),
+              child: const Text('Login'),
             ),
             ElevatedButton(
               onPressed: _signup,
-              child: Text('Signup'),
+              child: const Text('Signup'),
             ),
             if (_errorMessage.isNotEmpty)
               Text(
                 _errorMessage,
-                style: TextStyle(color: Colors.red),
+                style: const TextStyle(color: Colors.red),
               ),
           ],
         ),
