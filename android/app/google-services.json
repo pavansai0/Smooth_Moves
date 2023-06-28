@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "691193849940",
+    "project_id": "smooth-moves-8b940",
+    "storage_bucket": "smooth-moves-8b940.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:691193849940:android:0a8f0dd2f76f6425f565c1",
+        "android_client_info": {
+          "package_name": "com.example.smooth_moves"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "691193849940-rlnqk93s90ul2nhcisff2hbkasos47tg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ54pj_XjVJSq8pgBicH6bovEQ3lmueVw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "691193849940-rlnqk93s90ul2nhcisff2hbkasos47tg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
