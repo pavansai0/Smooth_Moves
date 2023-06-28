@@ -1,4 +1,4 @@
-# smooth_moves
+# Smooth_Moves
 
 A E-Commerce Website to level up your kicks game
 
