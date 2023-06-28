@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:smooth_moves/screens/seller_home.dart';
 
 class SellerLoginScreen extends StatefulWidget {
-  const SellerLoginScreen({super.key});
+  const SellerLoginScreen({Key? key}) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
@@ -29,7 +30,14 @@ class _SellerLoginScreenState extends State<SellerLoginScreen> {
         password: _passwordController.text,
       );
 
-      // Perform any necessary actions after successful login
+      // Navigate to SellersHomeScreen after successful login
+      // ignore: use_build_context_synchronously
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => const SellerHomeScreen(),
+        ),
+      );
     } catch (error) {
       setState(() {
         _errorMessage = 'Login failed. Please check your credentials.';
@@ -54,7 +62,14 @@ class _SellerLoginScreenState extends State<SellerLoginScreen> {
       };
       await _database.child(uid).set(userData);
 
-      // Perform any necessary actions after successful signup
+      // Navigate to SellersHomeScreen after successful signup
+      // ignore: use_build_context_synchronously
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) => const SellerHomeScreen(),
+        ),
+      );
     } catch (error) {
       setState(() {
         _errorMessage = 'Signup failed. Please try again later.';
