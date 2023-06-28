@@ -1,6 +1,6 @@
 # smooth_moves
 
-A new Flutter project.
+A E-Commerce Website to level up your kicks game
 
 ## Getting Started
 
