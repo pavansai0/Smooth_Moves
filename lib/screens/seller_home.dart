@@ -14,7 +14,7 @@ class _SellerHomeScreenState extends State<SellerHomeScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    const AddItemsScreen(),
+    const AddItemScreen(), // Updated class name
     const ProfilePage(),
   ];
 
@@ -43,6 +43,19 @@ class _SellerHomeScreenState extends State<SellerHomeScreen> {
           ),
         ],
       ),
+      floatingActionButton: _currentIndex == 0
+          ? FloatingActionButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const AddItemScreen(),
+                  ),
+                );
+              },
+              child: const Icon(Icons.add),
+            )
+          : null,
     );
   }
 }

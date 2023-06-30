@@ -29,11 +29,14 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
+  file_picker: ^5.3.2
   firebase_auth: ^4.6.3
   firebase_core: ^2.14.0
   firebase_database: ^10.2.3
+  firebase_storage: ^11.2.4
   flutter:
     sdk: flutter
+  image_picker: ^1.0.0
   screens: ^2.5.0
 
 dev_dependencies:
