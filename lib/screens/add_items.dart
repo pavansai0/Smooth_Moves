@@ -43,7 +43,7 @@ class _AddItemScreenState extends State<AddItemScreen> {
     // Show a snackbar or any other necessary action
     // ignore: use_build_context_synchronously
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(
+      const SnackBar(
         content: Text('Item added successfully.'),
       ),
     );
@@ -53,38 +53,38 @@ class _AddItemScreenState extends State<AddItemScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Item'),
+        title: const Text('Add Item'),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             TextField(
               controller: _nameController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Name',
               ),
               onChanged: (_) => _checkButtonAvailability(),
             ),
             TextField(
               controller: _priceController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Price',
               ),
               onChanged: (_) => _checkButtonAvailability(),
             ),
             TextField(
               controller: _imageController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 labelText: 'Image URL',
               ),
               onChanged: (_) => _checkButtonAvailability(),
             ),
-            SizedBox(height: 16.0),
+            const SizedBox(height: 16.0),
             ElevatedButton(
               onPressed: _isButtonEnabled ? _addItem : null,
-              child: Text('Add Item'),
+              child: const Text('Add Item'),
             ),
           ],
         ),
